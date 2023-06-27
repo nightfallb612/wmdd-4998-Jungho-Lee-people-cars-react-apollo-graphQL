@@ -1,4 +1,5 @@
 import { Card } from "antd";
+import RemovePerson from "../buttons/RemovePerson";
 
 const getStyles = () => ({
   card: {
@@ -11,7 +12,12 @@ const Person = (props) => {
   const styles = getStyles();
 
   return (
-    <Card style={styles.card}>
+    <Card
+      style={styles.card}
+      actions={[
+        <RemovePerson id={id} firstName={firstName} lastName={lastName} />,
+      ]}
+    >
       {firstName} {lastName}
     </Card>
   );

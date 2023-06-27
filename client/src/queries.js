@@ -19,3 +19,13 @@ export const ADD_PERSON = gql`
     }
   }
 `;
+
+export const REMOVE_PERSON = gql`
+  mutation RemovePerson($id: String!) {
+    removePerson(id: $id) {
+      id
+      firstName
+      lastName
+    }
+  }
+`;
