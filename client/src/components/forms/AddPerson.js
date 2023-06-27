@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, Form, Input } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { useMutation } from "@apollo/client";
-import { ADD_PERSON, GET_PEOPLE } from "../../queries/peopleQueries";
+import { ADD_PERSON, GET_PEOPLE } from "../../queries/personQueries";
 import SubTitle from "../layout/SubTitle";
 
 const AddPerson = () => {
