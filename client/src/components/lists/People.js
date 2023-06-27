@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import { GET_PEOPLE } from "../../queries";
+import { GET_PEOPLE } from "../../queries/peopleQueries";
 import { List } from "antd";
 import Person from "../listItems/Person";
 

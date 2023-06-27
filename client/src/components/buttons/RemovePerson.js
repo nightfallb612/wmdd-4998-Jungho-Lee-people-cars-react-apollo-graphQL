@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { GET_PEOPLE, REMOVE_PERSON } from "../../queries";
+import { GET_PEOPLE, REMOVE_PERSON } from "../../queries/peopleQueries";
 
 import { DeleteOutlined } from "@ant-design/icons";
 import filter from "lodash.filter";
