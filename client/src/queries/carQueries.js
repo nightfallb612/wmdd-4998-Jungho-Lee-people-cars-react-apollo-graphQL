@@ -13,6 +13,19 @@ export const GET_CARS = gql`
   }
 `;
 
+export const GET_PERSON_WITH_CARS = gql`
+  query PersonWithCars($personId: String!) {
+    personWithCars(personId: $personId) {
+      id
+      year
+      make
+      model
+      price
+      personId
+    }
+  }
+`;
+
 export const ADD_CAR = gql`
   mutation AddCar(
     $id: String!

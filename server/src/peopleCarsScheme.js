@@ -1,5 +1,6 @@
 import find from "lodash.find";
 import remove from "lodash.remove";
+import filter from "lodash.filter";
 
 const peopleDataArray = [
   {
@@ -115,6 +116,7 @@ const typeDefs = `
     people: [Person]
     car(id: String!): Car
     cars: [Car]
+    personWithCars(personId: String!): [Car]
   }
 
   type Mutation {
@@ -137,6 +139,12 @@ const resolvers = {
     cars: () => carsDataArray,
     car: (parent, args) => {
       return find(carsDataArray, { id: args.id });
+    },
+    personWithCars: (parent, args) => {
+      const personId = args.personId;
+      const personCars = filter(carsDataArray, { personId });
+      console.log("personCars: ", personCars);
+      return personCars;
     },
   },
 

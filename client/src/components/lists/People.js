@@ -17,8 +17,6 @@ const People = () => {
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
-  console.log("data", data);
-
   return (
     <List grid={{ gutter: 20, column: 1 }} style={styles.list}>
       {data.people.map(({ id, firstName, lastName }) => (
