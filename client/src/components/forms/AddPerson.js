@@ -6,7 +6,6 @@ import { ADD_PERSON, GET_PEOPLE } from "../../queries/personQueries";
 import SubTitle from "../layout/SubTitle";
 
 const AddPerson = () => {
-  const [id] = useState(uuidv4());
   const [addPerson] = useMutation(ADD_PERSON);
 
   const [form] = Form.useForm();
@@ -19,6 +18,7 @@ const AddPerson = () => {
 
   const onFinish = (values) => {
     const { firstName, lastName } = values;
+    const id = uuidv4();
 
     addPerson({
       variables: {
@@ -51,12 +51,14 @@ const AddPerson = () => {
         style={{ marginBottom: "40px" }}
       >
         <Form.Item
+          label="First Name"
           name="firstName"
           rules={[{ required: true, message: "Please input your first name!" }]}
         >
           <Input placeholder="First Name" />
         </Form.Item>
         <Form.Item
+          label="Last Name"
           name="lastName"
           rules={[{ required: true, message: "Please input your last name!" }]}
         >
