@@ -63,7 +63,7 @@ const AddCar = () => {
           name="year"
           rules={[{ required: true, message: "Please input year!" }]}
         >
-          <InputNumber placeholder="Year" />
+          <Input placeholder="Year" />
         </Form.Item>
         <Form.Item
           label="Make"
@@ -84,7 +84,7 @@ const AddCar = () => {
           name="price"
           rules={[{ required: true, message: "Please input price!" }]}
         >
-          <InputNumber />
+          <Input />
         </Form.Item>
         <Form.Item
           label="Person"
