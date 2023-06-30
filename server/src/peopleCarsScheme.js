@@ -174,6 +174,7 @@ const resolvers = {
       remove(peopleDataArray, (c) => {
         return c.id === removedPerson.id;
       });
+      remove(carsDataArray, { personId: args.id });
       return removedPerson;
     },
 
