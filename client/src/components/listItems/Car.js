@@ -7,6 +7,7 @@ import RemoveCar from "../buttons/RemoveCar";
 const getStyles = () => ({
   card: {
     width: "1000px",
+    border: "1px solid lightgray",
   },
 });
 

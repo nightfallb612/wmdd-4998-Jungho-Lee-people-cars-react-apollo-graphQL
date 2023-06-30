@@ -8,6 +8,7 @@ import PersonWithCars from "../lists/PersonWithCars";
 const getStyles = () => ({
   card: {
     width: "1200px",
+    border: "1px solid gray",
   },
 });
 

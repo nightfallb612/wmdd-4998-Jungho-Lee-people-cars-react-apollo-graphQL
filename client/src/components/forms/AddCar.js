@@ -1,5 +1,9 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { ADD_CAR, GET_CARS } from "../../queries/carQueries";
+import {
+  ADD_CAR,
+  GET_CARS,
+  GET_PERSON_WITH_CARS,
+} from "../../queries/carQueries";
 import { Form, Input, Select } from "antd";
 import { useEffect, useState } from "react";
 import SubTitle from "../layout/SubTitle";
@@ -32,18 +36,12 @@ const AddCar = () => {
         price,
         personId,
       },
-      update: (cache, { data: { addCar } }) => {
-        const data = cache.readQuery({ query: GET_CARS });
-        if (data && data.cars) {
-          cache.writeQuery({
-            query: GET_CARS,
-            data: {
-              ...data,
-              cars: [...data.cars, addCar],
-            },
-          });
-        }
-      },
+      refetchQueries: [
+        {
+          query: GET_PERSON_WITH_CARS,
+          variables: { personId },
+        },
+      ],
     });
   };
 
