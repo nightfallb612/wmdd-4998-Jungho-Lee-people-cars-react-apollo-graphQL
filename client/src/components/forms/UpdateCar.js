@@ -1,13 +1,13 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { Form, Input, Select } from "antd";
 import { useEffect, useState } from "react";
-import { UPDATE_CAR } from "../../queries/carQueries";
+import { GET_PERSON_WITH_CARS, UPDATE_CAR } from "../../queries/carQueries";
 import { GET_PEOPLE } from "../../queries/personQueries";
 
 const { Option } = Select;
 
 const UpdateCar = (props) => {
-  const { id, year, make, model, price, personId } = props;
+  const { id, year, make, model, price, personId: prevPersonId } = props;
   const [form] = Form.useForm();
   const [, forceUpdate] = useState();
 
@@ -30,6 +30,16 @@ const UpdateCar = (props) => {
         price,
         personId,
       },
+      refetchQueries: [
+        {
+          query: GET_PERSON_WITH_CARS,
+          variables: { personId: prevPersonId },
+        },
+        {
+          query: GET_PERSON_WITH_CARS,
+          variables: { personId },
+        },
+      ],
     });
     props.onButtonClick();
   };
