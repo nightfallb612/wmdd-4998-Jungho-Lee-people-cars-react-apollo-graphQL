@@ -35,7 +35,7 @@ const Car = (props) => {
         <Card
           actions={[
             <EditOutlined key="edit" onClick={handleButtonClick} />,
-            <RemoveCar id={id} />,
+            <RemoveCar id={id} personId={personId} />,
           ]}
         >
           {year} {make} {model} -&gt; ${price}
