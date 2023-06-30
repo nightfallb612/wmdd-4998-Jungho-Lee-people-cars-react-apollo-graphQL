@@ -5,6 +5,6 @@
 #### - yarn start
 &nbsp;
 ## Client
-### - cd ./client
-### - yarn
-### - yarn start
+#### - cd ./client
+#### - yarn
+#### - yarn start
