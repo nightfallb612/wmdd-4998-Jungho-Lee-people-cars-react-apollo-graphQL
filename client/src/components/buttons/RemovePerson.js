@@ -20,9 +20,7 @@ const RemovePerson = ({ id }) => {
   });
 
   const handleButtonClick = () => {
-    let result = window.confirm(
-      "Are you sure you want ot delete this contact?"
-    );
+    let result = window.confirm("Are you sure you want ot delete this person?");
     if (result) {
       removePerson({
         variables: {

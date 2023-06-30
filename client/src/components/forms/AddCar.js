@@ -1,6 +1,6 @@
 import { useMutation, useQuery } from "@apollo/client";
 import { ADD_CAR, GET_CARS } from "../../queries/carQueries";
-import { Form, Input, InputNumber, Select } from "antd";
+import { Form, Input, Select } from "antd";
 import { useEffect, useState } from "react";
 import SubTitle from "../layout/SubTitle";
 import { GET_PEOPLE } from "../../queries/personQueries";

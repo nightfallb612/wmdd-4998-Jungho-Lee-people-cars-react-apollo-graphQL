@@ -143,7 +143,6 @@ const resolvers = {
     personWithCars: (parent, args) => {
       const personId = args.personId;
       const personCars = filter(carsDataArray, { personId });
-      console.log("personCars: ", personCars);
       return personCars;
     },
   },

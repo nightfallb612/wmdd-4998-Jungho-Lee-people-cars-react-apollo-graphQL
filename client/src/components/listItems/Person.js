@@ -34,10 +34,12 @@ const Person = (props) => {
           style={styles.card}
           actions={[
             <EditOutlined key="edit" onClick={handleButtonClick} />,
-            <RemovePerson id={id} firstName={firstName} lastName={lastName} />,
+            <RemovePerson id={id} />,
           ]}
         >
-          {firstName} {lastName}
+          <b>
+            {firstName} {lastName}
+          </b>
           <PersonWithCars personId={id} />
         </Card>
       )}

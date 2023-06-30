@@ -16,7 +16,6 @@ const PersonWithCars = ({ personId }) => {
     variables: { personId: personId },
   });
 
-  console.log("PersonWithCars", data);
   if (loading) return "Loading...";
   if (error) return `Error! ${error.message}`;
 
